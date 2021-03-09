@@ -1,4 +1,5 @@
-const convert = require("../index")
+/* eslint-disable */
+const convert = require("../index.ts")
 
 test("convert 1000 bytes NUMBER to readable string", () => {
   expect(
@@ -56,4 +57,9 @@ test("handle infinity passed in", () => {
     expect(() => convert(Infinity)).toThrow()
 
 })
-
+test("Handle negative string number", ()=>{
+    expect(convert('-12')).toBe('-12B')
+})
+test("Negative number pass in", ()=>{
+    expect(convert(-12)).toBe("-12B")
+})
