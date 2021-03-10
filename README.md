@@ -21,29 +21,29 @@ By default, the converter will output normal Bytes as most people are used to (h
 ## Install
 
 ```sh
-yarn install byteme
+yarn install bytez
 ```
 
 ## Usage
 
 ```js
-const byteme = require('byteme')
+const bytez = require('bytez')
 
 // use Numbers or Strings
-console.log(byteme(4200)) // "4.2KB" (4.2 kilobytes)
-console.log(byteme("42000")) // "42KB" (42 kiloBytes)
+console.log(bytez(4200)) // "4.2KB" (4.2 kilobytes)
+console.log(bytez("42000")) // "42KB" (42 kiloBytes)
 
 // all using the same 500GB input
 
-console.log(byteme(500000000000,{
+console.log(bytez(500000000000,{
   bibytes: false
 })) // "500GB" **(500 GigaBytes)**
 
-console.log(byteme(500000000000,{
+console.log(bytez(500000000000,{
   bibytes: true
 })) // "465.7GiB" **(465.7 GibiBytes)**
 
-console.log(byteme(500000000000,{
+console.log(bytez(500000000000,{
   bibytes: true,
   bits: true
 })) // "3.6Tibit" **(3.6 Tebibits)**
