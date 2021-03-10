@@ -27,6 +27,8 @@ yarn install byteme
 ## Usage
 
 ```js
+const byteme = require('byteme')
+
 // use Numbers or Strings
 console.log(byteme(4200)) // "4.2KB" (4.2 kilobytes)
 console.log(byteme("42000")) // "42KB" (42 kiloBytes)
