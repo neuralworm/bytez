@@ -39,7 +39,7 @@ module.exports = function (byteString: number | string, optionsObject: any) {
 }
 const defaultOptions = {
   bits: false,
-  kibibytes: false,
+  base2: false,
   precision: 1,
   roundOffInt: true,
 }
