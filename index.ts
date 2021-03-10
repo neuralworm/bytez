@@ -23,19 +23,19 @@ module.exports = function (byteString: number | string, optionsObject: any) {
     throw new TypeError(
       "Number must be of type Number or String, received " + typeof number
     )
- 
+      
   let negative = number >= 0 ? false : true
-  number = Math.abs(number)
-  let factor = number ? Math.floor(Math.log10(number) / 3) : 0
-
-  let divisor = Math.pow(10, factor * 3)
+  number = !options.bits ? Math.abs(number) : Math.abs(number) * 8
+  let factor = number ? (!options.kibibytes ? Math.floor(Math.log10(number) / 3) : Math.floor(Math.log(number) / Math.log(1024))) : 0
+  let divisor = options.kibibytes ? Math.pow(2, 10 * factor) : Math.pow(10, factor * 3)
 
   number = (number / divisor).toFixed(options.precision)
   // determine if should leave digit on
   if (options.roundOffInt && Number.isInteger(parseFloat(number)))
     number = number.split(".")[0]
-  console.log(negative)
-  return `${negative ? "-" : ""}${number}${returnAppendation(factor)}`
+
+  // return final product
+  return `${negative ? "-" : ""}${number}${returnAppendation(factor, options.bits, options.kibibytes)}`
 }
 const defaultOptions = {
   bits: false,

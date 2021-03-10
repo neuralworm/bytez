@@ -1,9 +1,14 @@
 {
-  "name": "byter",
-  "version": "0.1.0",
+  "name": "byteme",
+  "version": "0.4.0",
   "description": "Convert bytes to human readable string.",
   "main": "dist/index.js",
   "license": "MIT",
+  "author": {
+    "name": "Jake Miller",
+    "email": "jakemillerdev@gmail.com",
+    "url": "https://jakemiller.io"
+  },
   "types": "./dist/index.d.ts",
   "dependencies": {},
   "devDependencies": {

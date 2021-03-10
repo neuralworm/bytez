@@ -33,15 +33,15 @@ module.exports = function (byteString, optionsObject) {
     else if (!Number.isFinite(number))
         throw new TypeError("Number must be of type Number or String, received " + typeof number);
     var negative = number >= 0 ? false : true;
-    number = Math.abs(number);
-    var factor = number ? Math.floor(Math.log10(number) / 3) : 0;
-    var divisor = Math.pow(10, factor * 3);
+    number = !options.bits ? Math.abs(number) : Math.abs(number) * 8;
+    var factor = number ? (!options.kibibytes ? Math.floor(Math.log10(number) / 3) : Math.floor(Math.log(number) / Math.log(1024))) : 0;
+    var divisor = options.kibibytes ? Math.pow(2, 10 * factor) : Math.pow(10, factor * 3);
     number = (number / divisor).toFixed(options.precision);
     // determine if should leave digit on
     if (options.roundOffInt && Number.isInteger(parseFloat(number)))
         number = number.split(".")[0];
-    console.log(negative);
-    return "" + (negative ? "-" : "") + number + returnAppendation(factor);
+    // return final product
+    return "" + (negative ? "-" : "") + number + returnAppendation(factor, options.bits, options.kibibytes);
 };
 var defaultOptions = {
     bits: false,

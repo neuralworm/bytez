@@ -63,3 +63,24 @@ test("Handle negative string number", ()=>{
 test("Negative number pass in", ()=>{
     expect(convert(-12)).toBe("-12B")
 })
+test("Test kibibytes option", ()=>{
+  expect(convert(1024, {
+    kibibytes: true
+  })).toBe("1KiB")
+})
+test("Test kibibytes", ()=>{
+  expect(convert(500000000000, {
+    kibibytes: true
+  })).toBe("465.7GiB")
+})
+test("Convert 500GB as BYTES into GIGABITS", ()=>{ // base 10
+  expect(convert(500000000000, {
+    bits: true
+  })).toBe("4Tbit")
+})
+test("Convert 500GB as BYTES into GIBIBITS", ()=>{ // base 2
+  expect(convert(500000000000, {
+    bits: true,
+    kibibytes: true
+  })).toBe("3.6Tibit")
+})
