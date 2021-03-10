@@ -78,6 +78,7 @@ test("Convert 500GB as BYTES into GIGABITS", ()=>{ // base 10
     bits: true
   })).toBe("4Tbit")
 })
+
 test("Convert 500GB as BYTES into GIBIBITS", ()=>{ // base 2
   expect(convert(500000000000, {
     bits: true,

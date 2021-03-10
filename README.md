@@ -11,7 +11,7 @@
 <hr>
 
 
-This module can output as either Bytes(8 bits) or Bits, as well as Kibi(base 2 - 1024) or Kilo(base 10 - 1000) values, or any combination of either.
+This module can output as either Bytes(8 bits) or Bits, as well as ibibytes(base 2 - 1024) or normal(base 10 - 1000) values, or any combination of either.
 
 
 By default, the converter will output normal Bytes as most people are used to (hard drive manufacturers advertsie their storage amounts in this manner.)
@@ -35,18 +35,18 @@ console.log(byteme("42000")) // "42KB" (42 kiloBytes)
 
 // all using the same 500GB input
 
-console.log(byteme(500000000000),{
-  kibibytes: false
-}) // "500GB" **(500 GigaBytes)**
+console.log(byteme(500000000000,{
+  bibytes: false
+})) // "500GB" **(500 GigaBytes)**
 
-console.log(byteme(500000000000),{
-  kibibytes: true
-}) // "465.7GiB" **(465.7 GibiBytes)**
+console.log(byteme(500000000000,{
+  bibytes: true
+})) // "465.7GiB" **(465.7 GibiBytes)**
 
-console.log(byteme(500000000000),{
-  kibibytes: true,
+console.log(byteme(500000000000,{
+  bibytes: true,
   bits: true
-}) // "3.6Tibit" **(3.6 Tebibits)**
+})) // "3.6Tibit" **(3.6 Tebibits)**
 
 ```
 
