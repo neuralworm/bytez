@@ -8,14 +8,15 @@
 
 > A module to take a number or string value representing byte-size, and outputting a human-readable string.
 
-### This module can convert bytes into either Bytes(8 bits) or Bits, as well as Kibi(base 2 - 1024) or Kilo(base 10 - 1000) values, or any combination of either.
+<hr>
 
-| Options   | Appendation | Example   |
-| --------- | ----------- | --------- |
-| Bytes     | "B"         | "420MB"   |
-| Bits      | "bits"      | "420Mbit" |
-| (Base 10) | k, M, G     | "420MB"   |
-| (Base 2)  | ki, Mi, Gi  | "420MiB"  |
+
+This module can output as either Bytes(8 bits) or Bits, as well as Kibi(base 2 - 1024) or Kilo(base 10 - 1000) values, or any combination of either.
+
+
+By default, the converter will output normal Bytes as most people are used to (hard drive manufacturers advertsie their storage amounts in this manner.)
+
+<hr>
 
 ## Install
 
@@ -46,6 +47,15 @@ console.log(byteme(500000000000),{
 }) // "3.6Tibit" **(3.6 Tebibits)**
 
 ```
+
+## Output Formats
+| Options   | Appendation | Example   |
+| --------- | ----------- | --------- |
+| Bytes     | "B"         | "420MB"   |
+| Bits      | "bits"      | "420Mbit" |
+| (Base 10) | k, M, G     | "420MB"   |
+| (Base 2)  | ki, Mi, Gi  | "420MiB"  |
+
 
 ## Author
 
