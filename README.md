@@ -1,4 +1,4 @@
-# byteme
+# bytez
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.4.0-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
@@ -11,7 +11,7 @@
 <hr>
 
 
-This module can output as either Bytes(8 bits) or Bits, as well as ibibytes(base 2 - 1024) or normal(base 10 - 1000) values, or any combination of either.
+This module can output as either Bytes(8 bits) or Bits, as well as kibibytes(base 2 - 1024) or normal(base 10 - 1000) values, or any combination of either.
 
 
 By default, the converter will output normal Bytes as most people are used to (hard drive manufacturers advertsie their storage amounts in this manner.)
