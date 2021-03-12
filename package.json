@@ -9,6 +9,12 @@
     "email": "jakemillerdev@gmail.com",
     "url": "https://jakemiller.io"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jakermate/bytez"
+  },
+  "homepage": "https://github.com/jakermate/bytez",
+  "keywords": ["bytes", "conversion", "byte", "bits", "bit", "base2", "base10", "string", "readable", "convert", "size"],
   "types": "./dist/index.d.ts",
   "dependencies": {},
   "devDependencies": {
