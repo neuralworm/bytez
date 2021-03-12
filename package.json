@@ -1,6 +1,6 @@
 {
   "name": "bytez",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Convert bytes to human readable string.",
   "main": "dist/index.js",
   "license": "MIT",
@@ -14,7 +14,19 @@
     "url": "https://github.com/jakermate/bytez"
   },
   "homepage": "https://github.com/jakermate/bytez",
-  "keywords": ["bytes", "conversion", "byte", "bits", "bit", "base2", "base10", "string", "readable", "convert", "size"],
+  "keywords": [
+    "bytes",
+    "conversion",
+    "byte",
+    "bits",
+    "bit",
+    "base2",
+    "base10",
+    "string",
+    "readable",
+    "convert",
+    "size"
+  ],
   "types": "./dist/index.d.ts",
   "dependencies": {},
   "devDependencies": {
