@@ -14,6 +14,14 @@ test("convert 100 bytes NUMBER to readable string", () => {
 test("convert 10001 bytes NUMBER to readable string", () => {
   expect(convert(10001)).toBe("10KB")
 })
+test("convert 100341431 bytes NUMBER to readable string", () => {
+  expect(convert(100341431)).toBe("100.3MB")
+})
+test("convert 100341431 bytes NUMBER w/ BITS to readable string", () => {
+  expect(convert(100341431,{
+    bits: true
+  })).toBe("802.7Mbit")
+})
 test("convert 10001 bytes STRING to readable string", () => {
   expect(convert("10001")).toBe("10KB")
 })

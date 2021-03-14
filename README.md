@@ -21,7 +21,7 @@ By default, the converter will output normal Bytes as most people are used to (h
 ## Install
 
 ```sh
-yarn install bytez
+yarn add bytez
 ```
 
 ## Usage
