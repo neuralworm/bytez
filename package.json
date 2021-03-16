@@ -3,7 +3,7 @@
   "version": "0.5.10",
   "description": "Convert bytes to human readable string.",
   "main": "lib/index.js",
-  "typings": "lib.index.d.ts",
+  "typings": "lib/index.d.ts",
   "license": "MIT",
   "author": {
     "name": "Jake Miller",
