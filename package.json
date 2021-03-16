@@ -1,6 +1,6 @@
 {
   "name": "bytez",
-  "version": "0.5.16",
+  "version": "0.5.17",
   "description": "Convert bytes to human readable string.",
   "main": "index.js",
   "license": "MIT",
