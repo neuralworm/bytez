@@ -1,5 +1,5 @@
 /* eslint-disable */
-const convert = require("../index.ts")
+const convert = require("../index")
 
 test("convert 1000 bytes NUMBER to readable string", () => {
   expect(

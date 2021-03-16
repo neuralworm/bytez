@@ -1,7 +1,8 @@
 {
   "name": "bytez",
-  "version": "0.5.15",
+  "version": "0.5.14",
   "description": "Convert bytes to human readable string.",
+  "main": "index.js",
   "license": "MIT",
   "author": {
     "name": "Jake Miller",
@@ -43,6 +44,6 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc && mv lib/index.d.ts index.d.ts"
   }
 }

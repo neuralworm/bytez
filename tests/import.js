@@ -1,2 +1,2 @@
 const otherimport = require('./otherimport')
-const conv = require('../dist/types/index')
+const conv = require("../index")
