@@ -1,15 +1,14 @@
-namespace bytez {
   // appendations
-  export const appendationFactor: string[] = ["", "K", "M", "G", "T", "P", "E", "Z", "Y"]
-  export const bitsOrKibibits: string[] = ["", "i"]
-  export const bytesOrBits: string[] = ["B", "bit"]
-  export const defaultOptions = {
+  const appendationFactor: string[] = ["", "K", "M", "G", "T", "P", "E", "Z", "Y"]
+  const bitsOrKibibits: string[] = ["", "i"]
+  const bytesOrBits: string[] = ["B", "bit"]
+  const defaultOptions = {
     bits: false,
     base2: false,
     precision: 1,
     roundOffInt: true,
   }
-  export function bytez(bytes: number | string, optionsObject: any): string {
+   function bytez(bytes: number | string, optionsObject: any): string {
     // set base options
     const options = { ...defaultOptions, ...optionsObject }
     // set number and check type
@@ -47,6 +46,5 @@ namespace bytez {
   module.exports = bytez
   
   
-}
 
 
