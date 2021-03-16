@@ -2,7 +2,7 @@
   "name": "bytez",
   "version": "0.5.5",
   "description": "Convert bytes to human readable string.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "license": "MIT",
   "author": {
@@ -11,7 +11,9 @@
     "url": "https://jakemiller.io"
   },
   "files": [
-    "index.js"
+    "dist/*",
+    "package.json",
+    "README.md"
   ],
   "repository": {
     "type": "git",
