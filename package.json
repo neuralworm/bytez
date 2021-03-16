@@ -1,6 +1,6 @@
 {
   "name": "bytez",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "Convert bytes to human readable string.",
   "main": "dist/index.js",
   "typings": "dist/types/index.d.ts",
