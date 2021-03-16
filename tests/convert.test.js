@@ -7,7 +7,7 @@ test("convert 1000 bytes NUMBER to readable string", () => {
       roundOffInt: true,
     })
   ).toBe("1KB")
-})
+}) 
 test("convert 100 bytes NUMBER to readable string", () => {
   expect(convert(100)).toBe("100B")
 })

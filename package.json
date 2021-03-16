@@ -44,6 +44,6 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "tsc && mv lib/index.d.ts index.d.ts"
+    "build": "tsc"
   }
 }
