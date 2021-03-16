@@ -2,7 +2,6 @@
   "name": "bytez",
   "version": "0.5.14",
   "description": "Convert bytes to human readable string.",
-  "main": "lib/index.js",
   "license": "MIT",
   "author": {
     "name": "Jake Miller",
@@ -10,7 +9,7 @@
     "url": "https://jakemiller.io"
   },
   "files": [
-    "lib/*",
+    "index.js",
     "index.d.ts",
     "package.json",
     "README.md"
@@ -33,7 +32,6 @@
     "convert",
     "size"
   ],
-  "types": "./dist/index.d.ts",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^7.21.0",
@@ -45,6 +43,6 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "tsc && mv lib/index.d.ts index.d.ts"
+    "build": "tsc"
   }
 }
