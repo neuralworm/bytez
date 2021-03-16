@@ -45,6 +45,6 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "tsc && mv dist/index.d.ts dist/types/index.d.ts"
+    "build": "tsc && mv lib/index.d.ts lib/types/index.d.ts"
   }
 }
