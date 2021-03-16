@@ -10,25 +10,20 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-// appendations
-var appendationFactor = ["", "K", "M", "G", "T", "P", "E", "Z", "Y"];
-var bitsOrKibibits = ["", "i"];
-var bytesOrBits = ["B", "bit"];
-function returnAppendation(factor, bits, kibi) {
-    if (bits === void 0) { bits = false; }
-    if (kibi === void 0) { kibi = false; }
-    return (appendationFactor[factor] +
-        bitsOrKibibits[kibi ? 1 : 0] +
-        bytesOrBits[bits ? 1 : 0]);
-}
-module.exports = function (byteString, optionsObject) {
+/**
+ *
+ * @param {string} string
+ * @param {number} number
+ * @returns {string}
+ */
+module.exports = function (bytes, optionsObject) {
     // set base options
     var options = __assign(__assign({}, defaultOptions), optionsObject);
     // set number and check type
-    var number = byteString;
+    var number = bytes;
     if (typeof number == "string") {
         // @ts-ignore
-        number.length > 0 ? (number = parseFloat(byteString)) : (number = 0);
+        number.length > 0 ? (number = parseFloat(bytes)) : (number = 0);
     }
     else if (!Number.isFinite(number))
         throw new TypeError("Number must be of type Number or String, received " + typeof number);
@@ -42,10 +37,21 @@ module.exports = function (byteString, optionsObject) {
         number = number.split(".")[0];
     // return final product
     return "" + (negative ? "-" : "") + number + returnAppendation(factor, options.bits, options.kibibytes);
+    function returnAppendation(factor, bits, kibi) {
+        if (bits === void 0) { bits = false; }
+        if (kibi === void 0) { kibi = false; }
+        return (appendationFactor[factor] +
+            bitsOrKibibits[kibi ? 1 : 0] +
+            bytesOrBits[bits ? 1 : 0]);
+    }
 };
+// appendations
+var appendationFactor = ["", "K", "M", "G", "T", "P", "E", "Z", "Y"];
+var bitsOrKibibits = ["", "i"];
+var bytesOrBits = ["B", "bit"];
 var defaultOptions = {
     bits: false,
-    kibibytes: false,
+    base2: false,
     precision: 1,
     roundOffInt: true,
 };

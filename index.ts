@@ -1,24 +1,17 @@
-// appendations
-const appendationFactor: string[] = ["", "K", "M", "G", "T", "P", "E", "Z", "Y"]
-const bitsOrKibibits: string[] = ["", "i"]
-const bytesOrBits: string[] = ["B", "bit"]
-
-function returnAppendation(factor: number, bits = false, kibi = false) {
-  return (
-    appendationFactor[factor] +
-    bitsOrKibibits[kibi ? 1 : 0] +
-    bytesOrBits[bits ? 1 : 0]
-  )
-}
-
-module.exports = function (byteString: number | string, optionsObject: any) {
+/**
+ * 
+ * @param {string} string 
+ * @param {number} number 
+ * @returns {string}
+ */
+module.exports = (bytes: number | string, optionsObject: any): string => {
   // set base options
   const options = { ...defaultOptions, ...optionsObject }
   // set number and check type
-  let number = byteString
+  let number = bytes
   if (typeof number == "string") {
     // @ts-ignore
-    number.length > 0 ? (number = parseFloat(byteString)) : (number = 0)
+    number.length > 0 ? (number = parseFloat(bytes)) : (number = 0)
   } else if (!Number.isFinite(number))
     throw new TypeError(
       "Number must be of type Number or String, received " + typeof number
@@ -36,10 +29,25 @@ module.exports = function (byteString: number | string, optionsObject: any) {
 
   // return final product
   return `${negative ? "-" : ""}${number}${returnAppendation(factor, options.bits, options.kibibytes)}`
+
+  function returnAppendation(factor: number, bits = false, kibi = false) {
+    return (
+      appendationFactor[factor] +
+      bitsOrKibibits[kibi ? 1 : 0] +
+      bytesOrBits[bits ? 1 : 0]
+    )
+  }
 }
+// appendations
+const appendationFactor: string[] = ["", "K", "M", "G", "T", "P", "E", "Z", "Y"]
+const bitsOrKibibits: string[] = ["", "i"]
+const bytesOrBits: string[] = ["B", "bit"]
 const defaultOptions = {
   bits: false,
   base2: false,
   precision: 1,
   roundOffInt: true,
 }
+
+
+

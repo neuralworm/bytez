@@ -1,2 +1,2 @@
-const convert = require('../dist/index')
-console.log(convert(1000000))
+const otherimport = require('./otherimport')
+const conv = require('../dist/index')
