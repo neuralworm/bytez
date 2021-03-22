@@ -42,14 +42,14 @@ function bytez(bytes, optionsObject) {
         throw new TypeError("Number must be of type Number or String, received " + typeof number);
     var negative = number >= 0 ? false : true;
     number = !options.bits ? Math.abs(number) : Math.abs(number) * 8;
-    var factor = number ? (!options.kibibytes ? Math.floor(Math.log10(number) / 3) : Math.floor(Math.log(number) / Math.log(1024))) : 0;
-    var divisor = options.kibibytes ? Math.pow(2, 10 * factor) : Math.pow(10, factor * 3);
+    var factor = number ? (!options.base2 ? Math.floor(Math.log10(number) / 3) : Math.floor(Math.log(number) / Math.log(1024))) : 0;
+    var divisor = options.base2 ? Math.pow(2, 10 * factor) : Math.pow(10, factor * 3);
     number = (number / divisor).toFixed(options.precision);
     // determine if should leave digit on
     if (options.roundOffInt && Number.isInteger(parseFloat(number)))
         number = number.split(".")[0];
     // return final product
-    return "" + (negative ? "-" : "") + number + returnAppendation(factor, options.bits, options.kibibytes);
+    return "" + (negative ? "-" : "") + number + returnAppendation(factor, options.bits, options.base2);
     function returnAppendation(factor, bits, kibi) {
         if (bits === void 0) { bits = false; }
         if (kibi === void 0) { kibi = false; }

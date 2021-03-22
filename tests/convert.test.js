@@ -73,12 +73,12 @@ test("Negative number pass in", ()=>{
 })
 test("Test kibibytes option", ()=>{
   expect(convert(1024, {
-    kibibytes: true
+    base2: true
   })).toBe("1KiB")
 })
 test("Test kibibytes", ()=>{
   expect(convert(500000000000, {
-    kibibytes: true
+    base2: true
   })).toBe("465.7GiB")
 })
 test("Convert 500GB as BYTES into GIGABITS", ()=>{ // base 10
@@ -90,7 +90,7 @@ test("Convert 500GB as BYTES into GIGABITS", ()=>{ // base 10
 test("Convert 500GB as BYTES into GIBIBITS", ()=>{ // base 2
   expect(convert(500000000000, {
     bits: true,
-    kibibytes: true
+    base2: true
   })).toBe("3.6Tibit")
 })
 test("Convert with precision option 3", ()=>{

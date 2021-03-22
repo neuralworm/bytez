@@ -32,8 +32,8 @@
   
     let negative = number >= 0 ? false : true
     number = !options.bits ? Math.abs(number) : Math.abs(number) * 8
-    let factor = number ? (!options.kibibytes ? Math.floor(Math.log10(number) / 3) : Math.floor(Math.log(number) / Math.log(1024))) : 0
-    let divisor = options.kibibytes ? Math.pow(2, 10 * factor) : Math.pow(10, factor * 3)
+    let factor = number ? (!options.base2 ? Math.floor(Math.log10(number) / 3) : Math.floor(Math.log(number) / Math.log(1024))) : 0
+    let divisor = options.base2 ? Math.pow(2, 10 * factor) : Math.pow(10, factor * 3)
   
     number = (number / divisor).toFixed(options.precision)
     // determine if should leave digit on
@@ -41,7 +41,7 @@
       number = number.split(".")[0]
   
     // return final product
-    return `${negative ? "-" : ""}${number}${returnAppendation(factor, options.bits, options.kibibytes)}`
+    return `${negative ? "-" : ""}${number}${returnAppendation(factor, options.bits, options.base2)}`
   
     function returnAppendation(factor: number, bits = false, kibi = false) {
       return (
