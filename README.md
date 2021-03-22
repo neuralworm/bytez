@@ -58,15 +58,15 @@ console.log(bytez(500000000000,{
 
 ## Options
 ### **base2**
-*Boolean, default: false*
+*Boolean, default: false*__
 Option to set whether your string will be output as normal base10 sizes (1MB is 1000kB) or base2 (1MiB is 1024kiB).
 
 ### **bits**
-*Boolean, default: false*
+*Boolean, default: false*__
 Option to determine if output string uses Bytes or bits).  1 Byte == 8 bits.
 
 ### **precision**
-*Number(int), default: 1*
+*Number(int), default: 1*__
 Number of significant figure digits to output.
 
 ## Output Formats
