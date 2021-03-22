@@ -20,6 +20,15 @@ var defaultOptions = {
     precision: 1,
     roundOffInt: true,
 };
+/**
+ * Takes a number argument representing bytes and returns a formated, condesnsed string.
+ * @param {number|string} bytes
+ * @param {Object} optionsObject
+ * @returns {string}
+ *
+ * @example
+ *  console.log(bytez(124000))
+ */
 function bytez(bytes, optionsObject) {
     // set base options
     var options = __assign(__assign({}, defaultOptions), optionsObject);

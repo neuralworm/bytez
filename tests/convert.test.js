@@ -93,3 +93,14 @@ test("Convert 500GB as BYTES into GIBIBITS", ()=>{ // base 2
     kibibytes: true
   })).toBe("3.6Tibit")
 })
+test("Convert with precision option 3", ()=>{
+  expect(convert(398274532, {
+    precision: 3
+  })).toBe("398.275MB")
+})
+
+test("Convert with precision option 10", ()=>{
+  expect(convert(398274532, {
+    precision: 10
+  })).toBe("398.2745320000MB")
+})
