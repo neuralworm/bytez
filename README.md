@@ -85,6 +85,6 @@ Number of significant figure digits to output.
 
 👤 **Jake Miller**
 
-* Website: [jakemiller.io](https://jakemiller.io)
-* Github: [@jakermate](https://github.com/jakermate)
+* Website: [jakemiller.dev](https://jakemiller.dev)
+* Github: [@neuralworm](https://github.com/neuralworm)
 
